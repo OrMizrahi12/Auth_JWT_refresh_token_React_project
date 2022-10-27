@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate , useLocation} from 'react-router-dom'
 
-const Register = () => {
+const Register = () => {  
     
     const navigate = useNavigate()
     const location = useLocation();
@@ -12,7 +12,7 @@ const Register = () => {
     const [email, setEmail] = useState('')
     const [pwd, setPwd] = useState('')
     const REGISTER_URL = "http://localhost:3000/register"
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -34,16 +34,6 @@ const Register = () => {
 
       
     }
-    // const goTo = () => {
-    //     navigate(from, { replace: true });
-
-    // }
-    // useEffect(() => {
-    //     if (resp === 200) {
-    //         goTo();
-    //     }
-
-    // }, [resp === 200])
     return (
         <div className='bg-ligth bd-placeholder-img'>
             <div className='w-25 mx-auto m-5 shadow'>
