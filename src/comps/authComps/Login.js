@@ -1,5 +1,4 @@
 
-// START HERE >>>
 
 import { useState, useContext, useEffect } from 'react';
 import {useNavigate, useLocation } from 'react-router-dom';
@@ -22,7 +21,6 @@ const LogIn = () => {
         e.preventDefault();
 
         try {
-            // #1 we send A login requst -->
             const response = await axios.post(LOGIN_URL,
                 { user: person.user, pwd: person.pwd },
                 {
@@ -30,13 +28,10 @@ const LogIn = () => {
                     withCredentials: true
                 }
             );
-            // #2 we collect the relevavant data from rhe response 
             const accessToken = response?.data?.accessToken;
             const roles = response.data.roles;
             const _id = response?.data?.foundUser._id
-            
-            // #3 we set the data in the global state 
-            // for #4 go to MainComp --> 
+
             setAuth({ user: person.user, roles, accessToken, _id });
           
             setResp(response.status)
